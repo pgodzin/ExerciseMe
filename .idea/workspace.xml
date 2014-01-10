@@ -19,10 +19,7 @@
     </layouts>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="143b74c1-d5c2-4c89-8439-cba51ff4694f" name="Default" comment="Working demo completed - notifaction and on completed workout text visibility added.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/ExerciseMe/FullBodyWorkout.java" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/FullBodyWorkout.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/emailentry.xml" afterPath="$PROJECT_DIR$/res/layout/emailentry.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/fullbody.xml" afterPath="$PROJECT_DIR$/res/layout/fullbody.xml" />
+    <list default="true" id="143b74c1-d5c2-4c89-8439-cba51ff4694f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ExerciseMe.iws" />
@@ -674,7 +671,11 @@
       <created>1389353727246</created>
       <updated>1389353727246</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Working demo completed - notifaction and on completed workout text visibility added.">
+      <created>1389396796547</created>
+      <updated>1389396796547</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
