@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="workouts">
+        <item name="ab_roller">Ab Roller</item>
+        <item name="full_body">Full Body</item>
+    </string-array>
+</resources>
