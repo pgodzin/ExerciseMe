@@ -25,7 +25,7 @@
             android:id="@+id/editText"
             android:layout_below="@+id/textView"
             android:layout_alignParentLeft="true"
-            android:text="Enter your email"
+            android:hint="Enter your email"
             />
 
     <Button
