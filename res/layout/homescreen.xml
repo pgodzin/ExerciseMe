@@ -3,19 +3,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:background="@android:color/background_light">
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Select A Workout"
-            android:id="@+id/textView"/>
+            android:id="@+id/textView"
+            android:textColor="@android:color/black"/>
 
     <ListView
             android:layout_width="wrap_content"
             android:layout_height="259dp"
-            android:id="@+id/listView"
-            android:smoothScrollbar="false"/>
+            android:id="@android:id/list"
+            android:smoothScrollbar="false"
+            android:background="@android:color/background_light"
+            android:stackFromBottom="false"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/newsletter"
+            android:textColor="@android:color/black"
+            android:text="Click here to sign up for our free newsletter!"
+            android:textSize="20dp"
+            android:gravity="bottom"
+            android:paddingTop="60dp"
+            android:singleLine="false"
+            android:clickable="true"/>
+
 
 </LinearLayout>

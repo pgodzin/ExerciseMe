@@ -20,5 +20,8 @@
         <activity
                 android:name=".Homescreen"
                 android:label="Homescreen"/>
+        <activity
+                android:name=".EnterEmail"
+                android:label="EnterEmail"/>
     </application>
 </manifest>
