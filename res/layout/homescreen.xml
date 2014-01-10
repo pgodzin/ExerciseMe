@@ -12,7 +12,10 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Select A Workout"
             android:id="@+id/textView"
-            android:textColor="@android:color/black"/>
+            android:textColor="@android:color/black"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="10dp"/>
 
     <ListView
             android:layout_width="wrap_content"
@@ -33,7 +36,8 @@
             android:gravity="bottom"
             android:paddingTop="60dp"
             android:singleLine="false"
-            android:clickable="true"/>
+            android:clickable="true"
+            android:paddingLeft="5dp"/>
 
 
 </LinearLayout>

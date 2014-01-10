@@ -19,15 +19,12 @@
     </layouts>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="143b74c1-d5c2-4c89-8439-cba51ff4694f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/EnterEmail.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/emailentry.xml" />
+    <list default="true" id="143b74c1-d5c2-4c89-8439-cba51ff4694f" name="Default" comment="Suggest products link to amazon">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/FullBodyWorkout.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/fullbody.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/ExerciseMe/Homescreen.java" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/Homescreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/ExerciseMe/MainActivity.java" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/homescreen.xml" afterPath="$PROJECT_DIR$/res/layout/homescreen.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/list_item.xml" afterPath="$PROJECT_DIR$/res/layout/list_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ExerciseMe.iws" />
@@ -92,38 +89,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="39" selection-start="492" selection-end="492" vertical-scroll-proportion="0.0" vertical-offset="123" max-vertical-offset="510">
-              <folding>
-                <element signature="e#522#761#0" expanded="true" />
-                <element signature="e#750#751#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="homescreen.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/homescreen.xml">
-          <provider editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="1492" selection-end="1492" vertical-scroll-proportion="0.0" vertical-offset="322" max-vertical-offset="748">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="25" selection-start="710" selection-end="710" vertical-scroll-proportion="-4.76" vertical-offset="153" max-vertical-offset="816">
               <folding />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-          <provider editor-type-id="text-editor">
-            <state line="10" column="37" selection-start="450" selection-end="450" vertical-scroll-proportion="0.0" vertical-offset="13" max-vertical-offset="442">
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer">
+          <provider editor-type-id="android-designer">
             <state />
           </provider>
         </entry>
@@ -131,44 +104,43 @@
       <file leaf-file-name="Homescreen.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/Homescreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="39" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+            <state line="34" column="0" selection-start="1373" selection-end="1373" vertical-scroll-proportion="-14.384615" vertical-offset="85" max-vertical-offset="1054">
               <folding>
-                <element signature="e#810#1047#0" expanded="true" />
-                <element signature="e#1036#1037#0" expanded="true" />
+                <element signature="e#725#962#0" expanded="true" />
+                <element signature="e#951#952#0" expanded="true" />
+                <element signature="e#1097#1457#0" expanded="true" />
+                <element signature="e#1446#1447#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EnterEmail.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/EnterEmail.java">
+      <file leaf-file-name="FullBodyWorkout.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/FullBodyWorkout.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="88" selection-end="88" vertical-scroll-proportion="0.13178295" vertical-offset="0" max-vertical-offset="387">
-              <folding />
+            <state line="34" column="77" selection-start="1556" selection-end="1556" vertical-scroll-proportion="0.45454547" vertical-offset="272" max-vertical-offset="1173">
+              <folding>
+                <element signature="e#583#1088#0" expanded="true" />
+                <element signature="e#1077#1078#0" expanded="true" />
+                <element signature="e#1325#1580#0" expanded="true" />
+                <element signature="e#1569#1570#0" expanded="true" />
+                <element signature="e#2021#2520#0" expanded="true" />
+                <element signature="e#2509#2510#0" expanded="true" />
+                <element signature="e#2614#3130#0" expanded="true" />
+                <element signature="e#3119#3120#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="emailentry.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/emailentry.xml">
+      <file leaf-file-name="fullbody.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/fullbody.xml">
           <provider editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+            <state line="130" column="29" selection-start="5176" selection-end="5176" vertical-scroll-proportion="0.0" vertical-offset="1937" max-vertical-offset="2703">
               <folding />
             </state>
           </provider>
           <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list_item.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/list_item.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="19" selection-start="881" selection-end="881" vertical-scroll-proportion="-7.48" vertical-offset="187" max-vertical-offset="527">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
             <state />
           </provider>
         </entry>
@@ -186,7 +158,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/drawable-hdpi/image_bg.xml" />
         <option value="$PROJECT_DIR$/res/drawable-hdpi/list_selector.xml" />
         <option value="$PROJECT_DIR$/res/drawable-hdpi/gradient_bg.xml" />
@@ -197,10 +168,14 @@
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/src/com/example/ExerciseMe/MainActivity.java" />
         <option value="$PROJECT_DIR$/res/layout/list_item.xml" />
-        <option value="$PROJECT_DIR$/res/layout/homescreen.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/ExerciseMe/Homescreen.java" />
         <option value="$PROJECT_DIR$/res/layout/emailentry.xml" />
         <option value="$PROJECT_DIR$/src/com/example/ExerciseMe/EnterEmail.java" />
+        <option value="$PROJECT_DIR$/res/layout/abroller.xml" />
+        <option value="$PROJECT_DIR$/res/layout/homescreen.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/ExerciseMe/Homescreen.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/res/layout/fullbody.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/ExerciseMe/FullBodyWorkout.java" />
       </list>
     </option>
   </component>
@@ -695,7 +670,11 @@
       <created>1389341481722</created>
       <updated>1389341481722</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixed bugs, first 2 screens and email activity">
+      <created>1389347553910</created>
+      <updated>1389347553910</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -772,7 +751,8 @@
     </option>
     <MESSAGE value="First commit - New Project&#10;" />
     <MESSAGE value="Created first page that shows logo and homescreen with list of workouts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created first page that shows logo and homescreen with list of workouts" />
+    <MESSAGE value="Fixed bugs, first 2 screens and email activity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs, first 2 screens and email activity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -785,13 +765,6 @@
     <entry file="file://$PROJECT_DIR$/ant.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="589">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="27" selection-start="583" selection-end="583" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
           <folding />
         </state>
       </provider>
@@ -870,43 +843,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/list_item.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/EnterEmail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="19" selection-start="881" selection-end="881" vertical-scroll-proportion="-7.48" vertical-offset="187" max-vertical-offset="527">
+        <state line="4" column="0" selection-start="88" selection-end="88" vertical-scroll-proportion="0.13178295" vertical-offset="0" max-vertical-offset="387">
           <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/homescreen.xml">
-      <provider editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1492" selection-end="1492" vertical-scroll-proportion="0.0" vertical-offset="322" max-vertical-offset="748">
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="39" selection-start="492" selection-end="492" vertical-scroll-proportion="0.0" vertical-offset="123" max-vertical-offset="510">
-          <folding>
-            <element signature="e#522#761#0" expanded="true" />
-            <element signature="e#750#751#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/Homescreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="39" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
-          <folding>
-            <element signature="e#810#1047#0" expanded="true" />
-            <element signature="e#1036#1037#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -920,10 +860,78 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/EnterEmail.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="88" selection-end="88" vertical-scroll-proportion="0.13178295" vertical-offset="0" max-vertical-offset="387">
+        <state line="28" column="10" selection-start="772" selection-end="772" vertical-scroll-proportion="0.0" vertical-offset="123" max-vertical-offset="510">
+          <folding>
+            <element signature="e#522#761#0" expanded="true" />
+            <element signature="e#750#751#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/list_item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="36" selection-start="539" selection-end="539" vertical-scroll-proportion="-2.72" vertical-offset="170" max-vertical-offset="527">
           <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="48" selection-start="794" selection-end="794" vertical-scroll-proportion="0.8346253" vertical-offset="0" max-vertical-offset="612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/homescreen.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="25" selection-start="710" selection-end="710" vertical-scroll-proportion="-4.76" vertical-offset="153" max-vertical-offset="816">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/fullbody.xml">
+      <provider editor-type-id="text-editor">
+        <state line="130" column="29" selection-start="5176" selection-end="5176" vertical-scroll-proportion="0.0" vertical-offset="1937" max-vertical-offset="2703">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/Homescreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="0" selection-start="1373" selection-end="1373" vertical-scroll-proportion="-14.384615" vertical-offset="85" max-vertical-offset="1054">
+          <folding>
+            <element signature="e#725#962#0" expanded="true" />
+            <element signature="e#951#952#0" expanded="true" />
+            <element signature="e#1097#1457#0" expanded="true" />
+            <element signature="e#1446#1447#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/FullBodyWorkout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="77" selection-start="1556" selection-end="1556" vertical-scroll-proportion="0.45454547" vertical-offset="272" max-vertical-offset="1173">
+          <folding>
+            <element signature="e#583#1088#0" expanded="true" />
+            <element signature="e#1077#1078#0" expanded="true" />
+            <element signature="e#1325#1580#0" expanded="true" />
+            <element signature="e#1569#1570#0" expanded="true" />
+            <element signature="e#2021#2520#0" expanded="true" />
+            <element signature="e#2509#2510#0" expanded="true" />
+            <element signature="e#2614#3130#0" expanded="true" />
+            <element signature="e#3119#3120#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

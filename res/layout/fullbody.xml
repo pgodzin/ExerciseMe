@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Full Body Workout"
+            android:id="@+id/fbTitle"
+            android:textSize="30sp"
+            android:paddingTop="5dp"
+            android:paddingLeft="5dp"
+            android:paddingBottom="10dp"/>
+
+    <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="50 pushups"
+            android:id="@+id/checkBox"
+            android:textSize="25sp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:checked="false"/>
+
+    <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100 situps"
+            android:id="@+id/checkBox2"
+            android:textSize="25sp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:checked="false"/>
+
+    <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100 crunches"
+            android:id="@+id/checkBox3"
+            android:textSize="25sp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:checked="false"/>
+
+    <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="50 squats"
+            android:id="@+id/checkBox4"
+            android:textSize="25sp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:checked="false"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Congrats! You are done with the workout!"
+            android:id="@+id/done"
+            android:paddingTop="10dp"
+            android:paddingBottom="20dp"
+            android:textSize="25dp"
+            android:visibility="invisible"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Suggested Products:"
+            android:id="@+id/suggested"
+            android:textSize="25dp"/>
+
+    <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/horizontalScrollView">
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+            <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="15dp"
+                    android:paddingStart="5dp">
+
+                <Button
+                        android:layout_width="158dp"
+                        android:layout_height="139dp"
+                        android:background="@drawable/shirt"
+                        android:scaleType="centerCrop"
+                        android:id="@+id/shirtButton"
+                        android:clickable="true"
+                        />
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/shirtButton"
+                        android:layout_centerHorizontal="true"
+                        android:text="Workout Shirt"
+                        android:textSize="20sp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="15dp">
+
+                <Button
+                        android:layout_width="158dp"
+                        android:layout_height="139dp"
+                        android:background="@drawable/shorts"
+                        android:scaleType="centerCrop"
+                        android:id="@+id/shortsButton"
+                        android:clickable="true"
+                        />
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/shortsButton"
+                        android:layout_centerHorizontal="true"
+                        android:text="Workout Shorts"
+                        android:textSize="20sp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                <Button
+                        android:layout_width="158dp"
+                        android:layout_height="139dp"
+                        android:background="@drawable/supplements"
+                        android:scaleType="centerCrop"
+                        android:id="@+id/suppButton"
+                        android:clickable="true"/>
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/suppButton"
+                        android:layout_centerHorizontal="true"
+                        android:text="Supplements"
+                        android:textSize="20sp"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+</LinearLayout>
