@@ -4,7 +4,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@android:color/background_light">
+              android:background="#0d044d">
 
     <TextView
             android:layout_width="wrap_content"
@@ -12,17 +12,17 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Select A Workout"
             android:id="@+id/textView"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:paddingLeft="5dp"
             android:paddingTop="5dp"
             android:paddingBottom="10dp"/>
 
     <ListView
             android:layout_width="wrap_content"
-            android:layout_height="259dp"
+            android:layout_height="wrap_content"
             android:id="@android:id/list"
             android:smoothScrollbar="false"
-            android:background="@android:color/background_light"
+            android:background="@android:color/holo_blue_dark"
             android:stackFromBottom="false"/>
 
     <TextView
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/newsletter"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:text="Click here to sign up for our free newsletter!"
             android:textSize="20dp"
             android:gravity="bottom"

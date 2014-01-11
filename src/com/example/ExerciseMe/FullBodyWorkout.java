@@ -5,55 +5,87 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import com.amazon.device.associates.AssociatesAPI;
+import com.amazon.device.associates.LinkService;
+import com.amazon.device.associates.NotInitializedException;
+import com.amazon.device.associates.OpenProductPageRequest;
 
 public class FullBodyWorkout extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fullbody);
+        //AssociatesAPI.initialize(new AssociatesAPI.Config(APPLICATION_KEY, this)); TODO: Get key
 
         Button b1 = (Button) findViewById(R.id.shirtButton);
+        final String asin1 = "B001U5PJT6";
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_VIEW);
-                intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                intent.setData(Uri.parse("http://www.amazon.com/Under-Armour-Short-Sleeve-T-Shirt/dp/B0073GO64U/ref=sr_1_13?ie=UTF8&qid=1389349267&sr=8-13&keywords=workout+clothes"));
-                startActivity(intent);
+                OpenProductPageRequest request = new OpenProductPageRequest(asin1);
+                try {
+                    LinkService linkService = AssociatesAPI.getLinkService();
+                    linkService.openRetailPage(request);
+                } catch (NotInitializedException e) {
+                    e.printStackTrace();
+                }
             }
+
 
 
         });
 
+        final String asin2 = "B001U5PJT6";
         Button b2 = (Button) findViewById(R.id.shortsButton);
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_VIEW);
-                intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                intent.setData(Uri.parse("http://www.amazon.com/Under-Armour-Mens-Shorts-Black/dp/B001U5PJT6/ref=sr_1_4?ie=UTF8&qid=1389349318&sr=8-4&keywords=workout+shorts"));
-                startActivity(intent);
+                OpenProductPageRequest request = new OpenProductPageRequest(asin2);
+                try {
+                    LinkService linkService = AssociatesAPI.getLinkService();
+                    linkService.openRetailPage(request);
+                } catch (NotInitializedException e) {
+                    e.printStackTrace();
+                }
             }
+
+
+
         });
 
+        final String asin3 = "B0015R3AAO";
         Button b3 = (Button) findViewById(R.id.suppButton);
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_VIEW);
-                intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                intent.setData(Uri.parse("http://www.amazon.com/Optimum-Nutrition-Opti-Men-Multivitamins-180-Count/dp/B0015R3AAO/ref=sr_1_2?ie=UTF8&qid=1389349340&sr=8-2&keywords=supplements"));
+                OpenProductPageRequest request = new OpenProductPageRequest(asin3);
+                try {
+                    LinkService linkService = AssociatesAPI.getLinkService();
+                    linkService.openRetailPage(request);
+                } catch (NotInitializedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+
+
+        });
+
+        Button play = (Button) findViewById(R.id.play_button);
+        play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FullBodyWorkout.this, com.example.ExerciseMe.MediaPlayer.class);
                 startActivity(intent);
             }
         });
+
 
     }
 
