@@ -1,23 +1,28 @@
 package com.example.ExerciseMe;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
-import android.media.MediaPlayer;
-import android.net.Uri;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 import com.amazon.device.associates.AssociatesAPI;
 import com.amazon.device.associates.LinkService;
 import com.amazon.device.associates.NotInitializedException;
 import com.amazon.device.associates.OpenProductPageRequest;
+import org.joda.time.DateTime;
 
 public class FullBodyWorkout extends Activity {
+    final int MAXDAYS = 2;
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fullbody);
@@ -38,7 +43,6 @@ public class FullBodyWorkout extends Activity {
             }
 
 
-
         });
 
         final String asin2 = "B001U5PJT6";
@@ -54,7 +58,6 @@ public class FullBodyWorkout extends Activity {
                     e.printStackTrace();
                 }
             }
-
 
 
         });
@@ -74,7 +77,6 @@ public class FullBodyWorkout extends Activity {
             }
 
 
-
         });
 
         Button play = (Button) findViewById(R.id.play_button);
@@ -86,6 +88,10 @@ public class FullBodyWorkout extends Activity {
             }
         });
 
+        SharedPreferences prefs = FullBodyWorkout.this.getSharedPreferences("TimeCompleted", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = prefs.edit();          //TODO: Don't delete on restart
+        edit.clear();
+        edit.commit();
 
     }
 
@@ -97,7 +103,7 @@ public class FullBodyWorkout extends Activity {
         final CheckBox cb3 = (CheckBox) findViewById(R.id.checkBox3);
         final CheckBox cb4 = (CheckBox) findViewById(R.id.checkBox4);
 
-        if (cb1.isChecked() && cb2.isChecked() && cb3.isChecked() && cb4.isChecked()){
+        if (cb1.isChecked() && cb2.isChecked() && cb3.isChecked() && cb4.isChecked()) {
             doneTV.setVisibility(View.VISIBLE);
             NotificationManager nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             Notification.Builder mBuilder =
@@ -107,7 +113,82 @@ public class FullBodyWorkout extends Activity {
                             .setContentText("Try supplements now!");
             nm.notify(0, mBuilder.build());
 
+            DateTime dt = new DateTime();
+            saveCompletionTime(dt);
+
         }
 
+    }
+
+    private void saveCompletionTime(DateTime dt) {
+        //int currentDay = dt.getDayOfYear();
+        int currentDay = dt.getMinuteOfDay();
+        int[] days = getFromPrefs();
+        int[] newArray;
+
+        SharedPreferences prefs = FullBodyWorkout.this.getSharedPreferences("TimeCompleted", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = prefs.edit();
+
+        if (prefs.getBoolean("Done", false)) {  // Goal has already been met
+//            Toast toast = Toast.makeText(FullBodyWorkout.this, "Already completed a workout for " + MAXDAYS + " in a row!", 3000);
+//            toast.setGravity(Gravity.CENTER, 0, 0);
+//            toast.show();
+            Dialog d = new Dialog(FullBodyWorkout.this);
+            d.setContentView(R.layout.newbadge);
+            d.setCancelable(true);
+            d.setCanceledOnTouchOutside(true);
+            d.setTitle("New Badge Awarded!");
+            d.show();
+        } else if (days.length > 0 && currentDay != days[days.length - 1]) {
+            int daysDiff = currentDay - days[days.length - 1];
+            if (daysDiff == 1) { // completes on following day TODO: end of year?
+                if (days.length < MAXDAYS - 1) {   // hasn't reached goal yet
+                    newArray = new int[days.length + 1];
+                    for (int j = 0; j < days.length; j++)
+                        newArray[j] = days[j];
+                    newArray[days.length] = currentDay;
+                    storeIntArray(newArray);
+                } else if (days.length == MAXDAYS - 1) { // Hit the goal
+                    edit.remove("TimeCompleted");
+                    edit.putBoolean("Done", true);
+                    edit.commit();
+                }
+            } else if (daysDiff != 0) {  // not a consecutive day
+                edit.remove("TimeCompleted");
+                edit.commit();
+                newArray = new int[1];
+                newArray[0] = currentDay;
+                storeIntArray(newArray);
+            }
+        } else if (days.length == 0) {   // no consecutive days (first time completing)
+            newArray = new int[1];
+            newArray[0] = currentDay;
+            storeIntArray(newArray);
+        }
+
+    }
+
+    private void storeIntArray(int[] array) {
+        SharedPreferences.Editor edit = FullBodyWorkout.this.getSharedPreferences("TimeCompleted", Context.MODE_PRIVATE).edit();
+        edit.putInt("Count", array.length);
+        int count = 0;
+        for (int i : array) {
+            edit.putInt("Day_" + count++, i);
+        }
+        edit.commit();
+    }
+
+    private int[] getFromPrefs() {
+        int[] ret;
+        SharedPreferences prefs = this.getSharedPreferences("TimeCompleted", Context.MODE_PRIVATE);
+        int count = prefs.getInt("Count", 0);
+        Toast toast = Toast.makeText(FullBodyWorkout.this, "Consecutive days: " + count, 3000);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
+        ret = new int[count];
+        for (int i = 0; i < count; i++) {
+            ret[i] = prefs.getInt("Day_" + i, i);
+        }
+        return ret;
     }
 }

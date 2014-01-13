@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".NewBadge"
+                style="@android:style/Animation.Dialog"
+                android:background="@android:color/transparent">
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/badge"
+            android:src="@drawable/badge"
+            style="@android:style/Animation.Dialog"
+            android:padding="20dp"
+            android:layout_below="@+id/badgeText"
+            android:layout_centerHorizontal="true"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/badgeText"
+            android:text="Badge added: 7 Days in a Row!"
+            style="@android:style/TextAppearance.Large"
+            android:typeface="serif"
+            android:textStyle="bold|italic"
+            android:textColor="@android:color/holo_orange_light"
+            android:paddingTop="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:gravity="center"/>
+</RelativeLayout>
