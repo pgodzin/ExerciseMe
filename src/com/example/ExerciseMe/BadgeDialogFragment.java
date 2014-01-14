@@ -18,17 +18,17 @@ public class BadgeDialogFragment extends DialogFragment {
         builder.setCancelable(true);
         final LayoutInflater inflater = getActivity().getLayoutInflater();
         builder.setView(inflater.inflate(R.layout.newbadge, null));
-        builder.setMessage("New Badge Awarded!")
+        builder
                 .setPositiveButton("Share to Facebook", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        SharedPreferences prefs = getActivity().getSharedPreferences("fbShare", Context.MODE_PRIVATE);
-                        SharedPreferences.Editor edit = prefs.edit();
-                        edit.putBoolean("share", true);
-                        edit.commit();
-                        BadgeDialogFragment.this.getDialog().cancel();
+            public void onClick(DialogInterface dialog, int id) {
+                SharedPreferences prefs = getActivity().getSharedPreferences("fbShare", Context.MODE_PRIVATE);
+                SharedPreferences.Editor edit = prefs.edit();
+                edit.putBoolean("share", true);
+                edit.commit();
+                BadgeDialogFragment.this.getDialog().cancel();
 
-                    }
-                })
+            }
+        })
                 .setNegativeButton("Close", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         BadgeDialogFragment.this.getDialog().cancel();

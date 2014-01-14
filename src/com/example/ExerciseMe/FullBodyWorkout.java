@@ -102,7 +102,7 @@ public class FullBodyWorkout extends FragmentActivity {
         edit.clear();
         edit.commit();
 
-        SharedPreferences badgePrefs = FullBodyWorkout.this.getSharedPreferences("TimeCompleted", Context.MODE_PRIVATE);
+        SharedPreferences badgePrefs = FullBodyWorkout.this.getSharedPreferences("Badges", Context.MODE_PRIVATE);
         SharedPreferences.Editor badgeEdit = badgePrefs.edit();          //TODO: Don't delete on restart
         badgeEdit.clear();
         badgeEdit.commit();
