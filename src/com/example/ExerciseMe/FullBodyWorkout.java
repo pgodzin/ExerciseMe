@@ -8,7 +8,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -18,21 +17,13 @@ import com.amazon.device.associates.AssociatesAPI;
 import com.amazon.device.associates.LinkService;
 import com.amazon.device.associates.NotInitializedException;
 import com.amazon.device.associates.OpenProductPageRequest;
-import com.facebook.UiLifecycleHelper;
-import com.facebook.model.GraphObject;
-import com.facebook.model.OpenGraphAction;
-import com.facebook.model.OpenGraphObject;
-import com.facebook.widget.FacebookDialog;
 import org.joda.time.DateTime;
 
 public class FullBodyWorkout extends FragmentActivity {
     final int MAXDAYS = 2;
-    private UiLifecycleHelper uiHelper;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        uiHelper = new UiLifecycleHelper(this, null);
-        uiHelper.onCreate(savedInstanceState);
 
         setContentView(R.layout.fullbody);
         //AssociatesAPI.initialize(new AssociatesAPI.Config(APPLICATION_KEY, this)); TODO: Get key
@@ -97,7 +88,7 @@ public class FullBodyWorkout extends FragmentActivity {
             }
         });
 
-        SharedPreferences prefs = FullBodyWorkout.this.getSharedPreferences("TimeCompleted", Context.MODE_PRIVATE);
+        SharedPreferences prefs = FullBodyWorkout.this.getSharedPreferences("TimesOfCompletions", Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = prefs.edit();          //TODO: Don't delete on restart
         edit.clear();
         edit.commit();
@@ -133,76 +124,21 @@ public class FullBodyWorkout extends FragmentActivity {
 
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        uiHelper.onActivityResult(requestCode, resultCode, data, new FacebookDialog.Callback() {
-            @Override
-            public void onError(FacebookDialog.PendingCall pendingCall, Exception error, Bundle data) {
-                Log.e("Activity", String.format("Error: %s", error.toString()));
-            }
-
-            @Override
-            public void onComplete(FacebookDialog.PendingCall pendingCall, Bundle data) {
-                Log.i("Activity", "Success!");
-            }
-
-
-        });
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        uiHelper.onResume();
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        uiHelper.onSaveInstanceState(outState);
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        uiHelper.onPause();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        uiHelper.onDestroy();
-    }
-
     private void saveCompletionTime(DateTime dt) {
         //int currentDay = dt.getDayOfYear();
         int currentDay = dt.getMinuteOfDay();
         int[] days = getFromPrefs();
         int[] newArray;
 
-        SharedPreferences prefs = FullBodyWorkout.this.getSharedPreferences("TimeCompleted", Context.MODE_PRIVATE);
+        SharedPreferences prefs = FullBodyWorkout.this.getSharedPreferences("TimesOfCompletions", Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = prefs.edit();
 
         SharedPreferences badgePrefs = FullBodyWorkout.this.getSharedPreferences("Badges", Context.MODE_PRIVATE);
         SharedPreferences.Editor badgeEdit = badgePrefs.edit();
-        if (!badgePrefs.getBoolean("ShownBadge", false)) {
-            if (badgePrefs.getBoolean("Done", false)) {  // Goal has already been met
-                // Toast.makeText(FullBodyWorkout.this, "Already completed a workout for " + MAXDAYS + " in a row!", 3000).show();
-                DialogFragment frag = new BadgeDialogFragment();
-                frag.show(getSupportFragmentManager(), "New Badge");
-                badgeEdit.putBoolean("ShownBadge", true);
-                badgeEdit.commit();
-            /*SharedPreferences fbPrefs = this.getSharedPreferences("fbShare", Context.MODE_PRIVATE);
-            SharedPreferences.Editor fbEdit = fbPrefs.edit();
-            if (fbPrefs.getBoolean("share", false)) {
-                shareToFB();    TODO: fix!
-            }*/
-
-            } else if (days.length > 0 && currentDay != days[days.length - 1]) {
+        if (!badgePrefs.getBoolean("ShownBadge_7consecutive", false)) {
+            if (days.length > 0 && currentDay != days[days.length - 1]) {  // Not first completion and not same day
                 int daysDiff = currentDay - days[days.length - 1];
-                if (daysDiff == 1) { // completes on following day TODO: end of year?
+                if (daysDiff == 1) { // completes on following day       TODO: end of year?
                     if (days.length < MAXDAYS - 1) {   // hasn't reached goal yet
                         newArray = new int[days.length + 1];
                         for (int j = 0; j < days.length; j++)
@@ -210,13 +146,12 @@ public class FullBodyWorkout extends FragmentActivity {
                         newArray[days.length] = currentDay;
                         storeIntArray(newArray);
                     } else if (days.length == MAXDAYS - 1) { // Hit the goal
-                        edit.remove("TimeCompleted");
+                        edit.remove("TimesOfCompletions");
                         edit.commit();
-                        badgeEdit.putBoolean("Done", true);
-                        badgeEdit.commit();
+                        showBadge("7consecutive");
                     }
                 } else if (daysDiff != 0) {  // not a consecutive day
-                    edit.remove("TimeCompleted");
+                    edit.remove("TimesOfCompletions");
                     edit.commit();
                     newArray = new int[1];
                     newArray[0] = currentDay;
@@ -231,19 +166,19 @@ public class FullBodyWorkout extends FragmentActivity {
     }
 
     private void storeIntArray(int[] array) {
-        SharedPreferences.Editor edit = FullBodyWorkout.this.getSharedPreferences("TimeCompleted", Context.MODE_PRIVATE).edit();
+        SharedPreferences.Editor edit = FullBodyWorkout.this.getSharedPreferences("TimesOfCompletions", Context.MODE_PRIVATE).edit();
         edit.putInt("Count", array.length);
         int count = 0;
         for (int i : array) {
             edit.putInt("Day_" + count++, i);
         }
-        Toast.makeText(FullBodyWorkout.this, "Consecutive days: " + array.length, 3000).show();
+        Toast.makeText(FullBodyWorkout.this, "Consecutive days: " + array.length, Toast.LENGTH_SHORT).show();
         edit.commit();
     }
 
     private int[] getFromPrefs() {
         int[] ret;
-        SharedPreferences prefs = this.getSharedPreferences("TimeCompleted", Context.MODE_PRIVATE);
+        SharedPreferences prefs = this.getSharedPreferences("TimesOfCompletions", Context.MODE_PRIVATE);
         int count = prefs.getInt("Count", 0);
         ret = new int[count];
         for (int i = 0; i < count; i++) {
@@ -252,22 +187,16 @@ public class FullBodyWorkout extends FragmentActivity {
         return ret;
     }
 
-    private void shareToFB() {
-        if (FacebookDialog.canPresentOpenGraphActionDialog(getApplicationContext(),
-                FacebookDialog.OpenGraphActionDialogFeature.OG_ACTION_DIALOG)) {
-            OpenGraphObject badge = OpenGraphObject.Factory.createForPost("exercisemeapp:badge");
-            badge.setProperty("title", "I achieved a new badge!");
-            badge.setProperty("image", "http://4sqday16.files.wordpress.com/2011/11/foursquare-gym-rat-badge.png");
-            //badge.setProperty("url", "https://example.com/cooking-app/badge/Buffalo-Tacos.html");  TODO: link to appstore
-            badge.setProperty("description", "I completed a full body workout for 7 straight days!");
-            OpenGraphAction action = GraphObject.Factory.create(OpenGraphAction.class);
-            action.setProperty("badge", badge);
+    private void showBadge(String badgeName) {
+        SharedPreferences badgePrefs = FullBodyWorkout.this.getSharedPreferences("Badges", Context.MODE_PRIVATE);
+        SharedPreferences.Editor badgeEdit = badgePrefs.edit();
 
-            FacebookDialog shareDialog = new FacebookDialog.OpenGraphActionDialogBuilder(this, action, "exercisemeapp:earn", "badge")
-                    .build();
-            uiHelper.trackPendingDialogCall(shareDialog.present());
-        } else {
-            Toast.makeText(this, "Facebook not available", Toast.LENGTH_SHORT).show();
-        }
+        badgeEdit.putBoolean("Done_" + badgeName, true);
+        badgeEdit.putBoolean("ShownBadge_" + badgeName, true);
+        badgeEdit.commit();
+
+        DialogFragment frag = new BadgeDialogFragment();
+        frag.show(getSupportFragmentManager(), "New Badge");
     }
+
 }
