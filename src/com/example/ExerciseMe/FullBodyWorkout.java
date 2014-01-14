@@ -1,13 +1,14 @@
 package com.example.ExerciseMe;
 
-import android.app.Activity;
-import android.app.Dialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -18,13 +19,22 @@ import com.amazon.device.associates.AssociatesAPI;
 import com.amazon.device.associates.LinkService;
 import com.amazon.device.associates.NotInitializedException;
 import com.amazon.device.associates.OpenProductPageRequest;
+import com.facebook.UiLifecycleHelper;
+import com.facebook.model.GraphObject;
+import com.facebook.model.OpenGraphAction;
+import com.facebook.model.OpenGraphObject;
+import com.facebook.widget.FacebookDialog;
 import org.joda.time.DateTime;
 
-public class FullBodyWorkout extends Activity {
+public class FullBodyWorkout extends FragmentActivity {
     final int MAXDAYS = 2;
+    private UiLifecycleHelper uiHelper;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        uiHelper = new UiLifecycleHelper(this, null);
+        uiHelper.onCreate(savedInstanceState);
+
         setContentView(R.layout.fullbody);
         //AssociatesAPI.initialize(new AssociatesAPI.Config(APPLICATION_KEY, this)); TODO: Get key
 
@@ -93,6 +103,7 @@ public class FullBodyWorkout extends Activity {
         edit.clear();
         edit.commit();
 
+
     }
 
     public void onCheckboxClicked(View view) {
@@ -120,6 +131,49 @@ public class FullBodyWorkout extends Activity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        uiHelper.onActivityResult(requestCode, resultCode, data, new FacebookDialog.Callback() {
+            @Override
+            public void onError(FacebookDialog.PendingCall pendingCall, Exception error, Bundle data) {
+                Log.e("Activity", String.format("Error: %s", error.toString()));
+            }
+
+            @Override
+            public void onComplete(FacebookDialog.PendingCall pendingCall, Bundle data) {
+                Log.i("Activity", "Success!");
+            }
+
+
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        uiHelper.onResume();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        uiHelper.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        uiHelper.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        uiHelper.onDestroy();
+    }
+
     private void saveCompletionTime(DateTime dt) {
         //int currentDay = dt.getDayOfYear();
         int currentDay = dt.getMinuteOfDay();
@@ -133,12 +187,15 @@ public class FullBodyWorkout extends Activity {
 //            Toast toast = Toast.makeText(FullBodyWorkout.this, "Already completed a workout for " + MAXDAYS + " in a row!", 3000);
 //            toast.setGravity(Gravity.CENTER, 0, 0);
 //            toast.show();
-            Dialog d = new Dialog(FullBodyWorkout.this);
-            d.setContentView(R.layout.newbadge);
-            d.setCancelable(true);
-            d.setCanceledOnTouchOutside(true);
-            d.setTitle("New Badge Awarded!");
-            d.show();
+//            Dialog d = new Dialog(FullBodyWorkout.this);
+            DialogFragment frag = new BadgeDialogFragment();
+            frag.show(getSupportFragmentManager(), "New Badge");
+            SharedPreferences fbPrefs = this.getSharedPreferences("fbShare", Context.MODE_PRIVATE);
+            SharedPreferences.Editor fbEdit = fbPrefs.edit();
+            if (fbPrefs.getBoolean("share", false)) {
+                shareToFB();
+            }
+
         } else if (days.length > 0 && currentDay != days[days.length - 1]) {
             int daysDiff = currentDay - days[days.length - 1];
             if (daysDiff == 1) { // completes on following day TODO: end of year?
@@ -190,5 +247,24 @@ public class FullBodyWorkout extends Activity {
             ret[i] = prefs.getInt("Day_" + i, i);
         }
         return ret;
+    }
+
+    private void shareToFB() {
+        if (FacebookDialog.canPresentOpenGraphActionDialog(getApplicationContext(),
+                FacebookDialog.OpenGraphActionDialogFeature.OG_ACTION_DIALOG)) {
+            OpenGraphObject badge = OpenGraphObject.Factory.createForPost("exercisemeapp:badge");
+            badge.setProperty("title", "I achieved a new badge!");
+            badge.setProperty("image", "http://4sqday16.files.wordpress.com/2011/11/foursquare-gym-rat-badge.png");
+            //badge.setProperty("url", "https://example.com/cooking-app/badge/Buffalo-Tacos.html");  TODO: link to appstore
+            badge.setProperty("description", "I completed a full body workout for 7 straight days!");
+            OpenGraphAction action = GraphObject.Factory.create(OpenGraphAction.class);
+            action.setProperty("badge", badge);
+
+            FacebookDialog shareDialog = new FacebookDialog.OpenGraphActionDialogBuilder(this, action, "exercisemeapp:earn", "badge")
+                    .build();
+            uiHelper.trackPendingDialogCall(shareDialog.present());
+        } else {
+            Toast.makeText(this, "Facebook not available", Toast.LENGTH_SHORT).show();
+        }
     }
 }
