@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -103,7 +102,10 @@ public class FullBodyWorkout extends FragmentActivity {
         edit.clear();
         edit.commit();
 
-
+        SharedPreferences badgePrefs = FullBodyWorkout.this.getSharedPreferences("TimeCompleted", Context.MODE_PRIVATE);
+        SharedPreferences.Editor badgeEdit = badgePrefs.edit();          //TODO: Don't delete on restart
+        badgeEdit.clear();
+        badgeEdit.commit();
     }
 
     public void onCheckboxClicked(View view) {
@@ -183,46 +185,49 @@ public class FullBodyWorkout extends FragmentActivity {
         SharedPreferences prefs = FullBodyWorkout.this.getSharedPreferences("TimeCompleted", Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = prefs.edit();
 
-        if (prefs.getBoolean("Done", false)) {  // Goal has already been met
-//            Toast toast = Toast.makeText(FullBodyWorkout.this, "Already completed a workout for " + MAXDAYS + " in a row!", 3000);
-//            toast.setGravity(Gravity.CENTER, 0, 0);
-//            toast.show();
-//            Dialog d = new Dialog(FullBodyWorkout.this);
-            DialogFragment frag = new BadgeDialogFragment();
-            frag.show(getSupportFragmentManager(), "New Badge");
-            SharedPreferences fbPrefs = this.getSharedPreferences("fbShare", Context.MODE_PRIVATE);
+        SharedPreferences badgePrefs = FullBodyWorkout.this.getSharedPreferences("Badges", Context.MODE_PRIVATE);
+        SharedPreferences.Editor badgeEdit = badgePrefs.edit();
+        if (!badgePrefs.getBoolean("ShownBadge", false)) {
+            if (badgePrefs.getBoolean("Done", false)) {  // Goal has already been met
+                // Toast.makeText(FullBodyWorkout.this, "Already completed a workout for " + MAXDAYS + " in a row!", 3000).show();
+                DialogFragment frag = new BadgeDialogFragment();
+                frag.show(getSupportFragmentManager(), "New Badge");
+                badgeEdit.putBoolean("ShownBadge", true);
+                badgeEdit.commit();
+            /*SharedPreferences fbPrefs = this.getSharedPreferences("fbShare", Context.MODE_PRIVATE);
             SharedPreferences.Editor fbEdit = fbPrefs.edit();
             if (fbPrefs.getBoolean("share", false)) {
-                shareToFB();
-            }
+                shareToFB();    TODO: fix!
+            }*/
 
-        } else if (days.length > 0 && currentDay != days[days.length - 1]) {
-            int daysDiff = currentDay - days[days.length - 1];
-            if (daysDiff == 1) { // completes on following day TODO: end of year?
-                if (days.length < MAXDAYS - 1) {   // hasn't reached goal yet
-                    newArray = new int[days.length + 1];
-                    for (int j = 0; j < days.length; j++)
-                        newArray[j] = days[j];
-                    newArray[days.length] = currentDay;
-                    storeIntArray(newArray);
-                } else if (days.length == MAXDAYS - 1) { // Hit the goal
+            } else if (days.length > 0 && currentDay != days[days.length - 1]) {
+                int daysDiff = currentDay - days[days.length - 1];
+                if (daysDiff == 1) { // completes on following day TODO: end of year?
+                    if (days.length < MAXDAYS - 1) {   // hasn't reached goal yet
+                        newArray = new int[days.length + 1];
+                        for (int j = 0; j < days.length; j++)
+                            newArray[j] = days[j];
+                        newArray[days.length] = currentDay;
+                        storeIntArray(newArray);
+                    } else if (days.length == MAXDAYS - 1) { // Hit the goal
+                        edit.remove("TimeCompleted");
+                        edit.commit();
+                        badgeEdit.putBoolean("Done", true);
+                        badgeEdit.commit();
+                    }
+                } else if (daysDiff != 0) {  // not a consecutive day
                     edit.remove("TimeCompleted");
-                    edit.putBoolean("Done", true);
                     edit.commit();
+                    newArray = new int[1];
+                    newArray[0] = currentDay;
+                    storeIntArray(newArray);
                 }
-            } else if (daysDiff != 0) {  // not a consecutive day
-                edit.remove("TimeCompleted");
-                edit.commit();
+            } else if (days.length == 0) {   // no consecutive days (first time completing)
                 newArray = new int[1];
                 newArray[0] = currentDay;
                 storeIntArray(newArray);
             }
-        } else if (days.length == 0) {   // no consecutive days (first time completing)
-            newArray = new int[1];
-            newArray[0] = currentDay;
-            storeIntArray(newArray);
         }
-
     }
 
     private void storeIntArray(int[] array) {
@@ -232,6 +237,7 @@ public class FullBodyWorkout extends FragmentActivity {
         for (int i : array) {
             edit.putInt("Day_" + count++, i);
         }
+        Toast.makeText(FullBodyWorkout.this, "Consecutive days: " + array.length, 3000).show();
         edit.commit();
     }
 
@@ -239,9 +245,6 @@ public class FullBodyWorkout extends FragmentActivity {
         int[] ret;
         SharedPreferences prefs = this.getSharedPreferences("TimeCompleted", Context.MODE_PRIVATE);
         int count = prefs.getInt("Count", 0);
-        Toast toast = Toast.makeText(FullBodyWorkout.this, "Consecutive days: " + count, 3000);
-        toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.show();
         ret = new int[count];
         for (int i = 0; i < count; i++) {
             ret[i] = prefs.getInt("Day_" + i, i);
