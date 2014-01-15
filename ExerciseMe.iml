@@ -43,6 +43,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="facebook" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/Android Dev/aws-android-sdk-1.7.1.1/lib/aws-android-sdk-1.7.1.1-debug.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
 

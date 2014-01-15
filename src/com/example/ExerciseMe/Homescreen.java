@@ -25,6 +25,15 @@ public class Homescreen extends ListActivity {
             }
         });
 
+        TextView feedback = (TextView) findViewById(R.id.feedback);
+        feedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Homescreen.this, FeedbackForm.class);
+                startActivity(intent);
+            }
+        });
+
         ListView lv = (ListView) findViewById(android.R.id.list);
         lv.setClickable(true);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:background="@android:color/holo_blue_dark">
+        android:background="@android:color/holo_blue_dark"
+        tools:context=".EnterEmail">
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Enter your email to sign up for our newsletter"
+            android:text="@string/enterEmail"
             android:id="@+id/textView"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
@@ -26,14 +28,14 @@
             android:id="@+id/editText"
             android:layout_below="@+id/textView"
             android:layout_alignParentLeft="true"
-            android:hint="Enter your email"
+            android:hint="@string/emailHint"
             android:textColorHint="@android:color/darker_gray"/>
 
     <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter"
+            android:text="@string/enter"
             android:id="@+id/enter_email"
             android:layout_alignBottom="@+id/editText"
             android:layout_toRightOf="@+id/editText"/>

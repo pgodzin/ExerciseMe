@@ -2,4 +2,29 @@
 <resources>
     <string name="app_name">ExerciseMe</string>
     <string name="app_id">464504380328648</string>
+    <string name="feedback">Feedback</string>
+    <string name="name">Name</string>
+    <string name="rating">Rating</string>
+    <string name="comments">Comments</string>
+    <string name="submit">Submit</string>
+    <string name="app_name">FeedbackForm</string>
+    <string name="feedbackText">Click here to give us feedback!</string>
+    <string name="selectWorkout">Select A Workout</string>
+    <string name="newsletter">Click here to sign up for our free newsletter!</string>
+    <string name="enterEmail">Enter your email to sign up for our newsletter</string>
+    <string name="emailHint">Enter your email</string>
+    <string name="enter">Enter</string>
+    <string name="commentHint">Type comments here</string>
+    <string name="fullBody">Full Body Workout</string>
+    <string name="situps">100 situps</string>
+    <string name="squats">50 squats</string>
+    <string name="crunches">100 crunches</string>
+    <string name="workoutDone">Congrats! You are done with the workout!</string>
+    <string name="suggestedProducts">Suggested Products:</string>
+    <string name="pushups">50 pushups</string>
+    <string name="shirt">Workout Shirt</string>
+    <string name="shorts">Workout Shorts</string>
+    <string name="supps">Supplements</string>
+    <string name="badgeContent">New badge awarded</string>
+    <string name="consbadge">Badge added: 7 Days in a Row!</string>
 </resources>

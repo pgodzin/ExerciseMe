@@ -33,6 +33,10 @@
                 android:label="FullBodyWorkout"
                 />
         <activity
+                android:name=".FeedbackForm"
+                android:label="ExerciseMe"
+                />
+        <activity
                 android:name=".MediaPlayer"
                 android:label="MediaPlayer"/>
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
