@@ -10,6 +10,12 @@
       <config />
     </shared>
     <layouts>
+      <layout url="file://$PROJECT_DIR$/res/layout/consecutivebadge.xml">
+        <config>
+          <device>Nexus 4</device>
+          <theme>@android:style/Theme.Holo</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/res/layout/emailentry.xml">
         <config>
           <device>Nexus 4</device>
@@ -52,12 +58,6 @@
           <theme>@android:style/Theme.Holo</theme>
         </config>
       </layout>
-      <layout url="file://$PROJECT_DIR$/res/layout/newbadge.xml">
-        <config>
-          <device>Nexus 4</device>
-          <theme>@android:style/Theme.Holo</theme>
-        </config>
-      </layout>
     </layouts>
   </component>
   <component name="AndroidLogFilters">
@@ -65,25 +65,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="143b74c1-d5c2-4c89-8439-cba51ff4694f" name="Default" comment="SES files added">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-hdpi/badge.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-hdpi/badgefb.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/tvmclient/AESEncryption.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/AmazonClientManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/tvmclient/AmazonSharedPreferencesWrapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/tvmclient/AmazonTVMClient.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/AwsCredentials.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/FeedbackForm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/tvmclient/GetTokenRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/tvmclient/GetTokenResponse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/tvmclient/GetTokenResponseHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/PropertyLoader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/tvmclient/RegisterDeviceRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/tvmclient/Request.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/tvmclient/Response.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/tvmclient/ResponseHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/SESManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/tvmclient/TokenVendingMachineService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/tvmclient/Utilities.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/BadgeUtils.java" />
+      <change type="MOVED" beforePath="C:\Users\Phil\Dropbox\Public\CS\Android Dev\ExerciseMe\res\layout\newbadge.xml" afterPath="$PROJECT_DIR$/res/layout/consecutivebadge.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/ExerciseMe/BadgeDialogFragment.java" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/BadgeDialogFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/ExerciseMe/FullBodyWorkout.java" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/FullBodyWorkout.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ExerciseMe.iws" />
@@ -180,96 +165,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AmazonClientManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/AmazonClientManager.java">
+      <file leaf-file-name="BadgeDialogFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/BadgeDialogFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="16" selection-start="2673" selection-end="2673" vertical-scroll-proportion="0.0" vertical-offset="1187" max-vertical-offset="1683">
+            <state line="37" column="56" selection-start="1296" selection-end="1296" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1802">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <file leaf-file-name="FullBodyWorkout.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/FullBodyWorkout.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="41" selection-start="4290" selection-end="4290" vertical-scroll-proportion="0.0" vertical-offset="19365" max-vertical-offset="25330">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegisterDeviceRequest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/tvmclient/RegisterDeviceRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="16" selection-start="1437" selection-end="1437" vertical-scroll-proportion="0.0" vertical-offset="261" max-vertical-offset="629">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Utilities.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/tvmclient/Utilities.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="31" selection-start="1194" selection-end="1194" vertical-scroll-proportion="0.0" vertical-offset="99" max-vertical-offset="986">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="project.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="20" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0" vertical-offset="6" max-vertical-offset="374">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AmazonTVMClient.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/tvmclient/AmazonTVMClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="120" column="20" selection-start="4464" selection-end="4464" vertical-scroll-proportion="0.33239436" vertical-offset="1922" max-vertical-offset="2431">
+            <state line="142" column="49" selection-start="5989" selection-end="5989" vertical-scroll-proportion="0.20054945" vertical-offset="2035" max-vertical-offset="2992">
               <folding>
-                <element signature="e#0#4900#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ant.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ant.properties">
+      <file leaf-file-name="BadgeUtils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/BadgeUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AwsCredentials.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/AwsCredentials.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="46" selection-start="697" selection-end="697" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="391">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FeedbackForm.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/FeedbackForm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="43" selection-start="3442" selection-end="3442" vertical-scroll-proportion="0.0" vertical-offset="1221" max-vertical-offset="1904">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TokenVendingMachineService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/tvmclient/TokenVendingMachineService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="22" selection-start="2570" selection-end="2570" vertical-scroll-proportion="0.0" vertical-offset="737" max-vertical-offset="1615">
+            <state line="17" column="20" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
               <folding>
-                <element signature="e#0#3280#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -294,7 +214,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/example/ExerciseMe/MainActivity.java" />
         <option value="$PROJECT_DIR$/res/layout/list_item.xml" />
         <option value="$PROJECT_DIR$/src/com/example/ExerciseMe/EnterEmail.java" />
         <option value="$PROJECT_DIR$/res/layout/abroller.xml" />
@@ -303,8 +222,6 @@
         <option value="$PROJECT_DIR$/src/com/example/ExerciseMe/NewBadge.java" />
         <option value="$PROJECT_DIR$/src/com/example/ExerciseMe/BadgeDialog.java" />
         <option value="$PROJECT_DIR$/src/com/example/ExerciseMe/FacebookShare.java" />
-        <option value="$PROJECT_DIR$/src/com/example/ExerciseMe/BadgeDialogFragment.java" />
-        <option value="$PROJECT_DIR$/src/com/example/ExerciseMe/FullBodyWorkout.java" />
         <option value="$USER_HOME$/Documents/GitHub/aws-tvm-anonymous/src/com/amazonaws/tvm/Constants.java" />
         <option value="$PROJECT_DIR$/src/AWSAndroidDemoTVM.java" />
         <option value="$PROJECT_DIR$/src/PropertyLoader.java" />
@@ -345,6 +262,9 @@
         <option value="$PROJECT_DIR$/src/com/example/ExerciseMe/FeedbackForm.java" />
         <option value="$PROJECT_DIR$/src/com/example/ExerciseMe/tvmclient/TokenVendingMachineService.java" />
         <option value="$PROJECT_DIR$/src/com/example/ExerciseMe/tvmclient/AmazonTVMClient.java" />
+        <option value="$PROJECT_DIR$/src/com/example/ExerciseMe/BadgeDialogFragment.java" />
+        <option value="$PROJECT_DIR$/src/com/example/ExerciseMe/BadgeUtils.java" />
+        <option value="$PROJECT_DIR$/src/com/example/ExerciseMe/FullBodyWorkout.java" />
       </list>
     </option>
   </component>
@@ -511,6 +431,38 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="ExerciseMe" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExerciseMe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExerciseMe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExerciseMe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExerciseMe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExerciseMe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ExerciseMe" />
@@ -926,7 +878,11 @@
       <created>1389782450672</created>
       <updated>1389782450672</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="SES files added">
+      <created>1389783915448</created>
+      <updated>1389783915448</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -965,8 +921,8 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.501355" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.501355" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32520324" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34471545" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32520324" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34471545" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1048,11 +1004,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Android Dev/facebook-android-sdk-3.6.0/facebook/src/com/facebook/internal/Validate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="1018" selection-end="1018" vertical-scroll-proportion="0.0" vertical-offset="116" max-vertical-offset="1309" />
-      </provider>
-    </entry>
     <entry file="file://C:/Android Dev/facebook-android-sdk-3.6.0/facebook/src/com/facebook/UiLifecycleHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="86" column="0" selection-start="3460" selection-end="3460" vertical-scroll-proportion="0.33152175" vertical-offset="915" max-vertical-offset="4930" />
@@ -1149,13 +1100,6 @@
         <state line="56" column="68" selection-start="5084" selection-end="5084" vertical-scroll-proportion="0.3490566" vertical-offset="750" max-vertical-offset="1326" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/BadgeDialogFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="24" selection-start="1410" selection-end="1410" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1700">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/EnterEmail.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="13" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
@@ -1173,13 +1117,6 @@
     <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/MediaPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="13" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/FullBodyWorkout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="179" column="0" selection-start="7476" selection-end="7476" vertical-scroll-proportion="0.0" vertical-offset="2025" max-vertical-offset="2924">
           <folding />
         </state>
       </provider>
@@ -1234,7 +1171,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/newbadge.xml">
+    <entry file="file://$PROJECT_DIR$/res/layout/consecutivebadge.xml">
       <provider editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="343">
           <folding />
@@ -1339,7 +1276,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="41" selection-start="4290" selection-end="4290" vertical-scroll-proportion="0.0" vertical-offset="19365" max-vertical-offset="25330">
+        <state line="65" column="41" selection-start="2092" selection-end="2092" vertical-scroll-proportion="0.0" vertical-offset="19042" max-vertical-offset="25143">
           <folding />
         </state>
       </provider>
@@ -1360,8 +1297,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/FeedbackForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="43" selection-start="3442" selection-end="3442" vertical-scroll-proportion="0.0" vertical-offset="1221" max-vertical-offset="1904">
-          <folding />
+        <state line="101" column="43" selection-start="3392" selection-end="3392" vertical-scroll-proportion="0.0" vertical-offset="1221" max-vertical-offset="1904">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1384,9 +1323,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/tvmclient/AmazonTVMClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="20" selection-start="4464" selection-end="4464" vertical-scroll-proportion="0.33239436" vertical-offset="1922" max-vertical-offset="2431">
+        <state line="120" column="20" selection-start="4464" selection-end="4464" vertical-scroll-proportion="0.0" vertical-offset="1876" max-vertical-offset="2431">
           <folding>
             <element signature="e#0#4900#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Android Dev/adt-bundle-windows-x86_64-20131030/sdk/platforms/android-19/android.jar!/android/content/ContextWrapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="45" selection-start="1530" selection-end="1530" vertical-scroll-proportion="0.33333334" vertical-offset="454" max-vertical-offset="3281">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Android Dev/adt-bundle-windows-x86_64-20131030/sdk/platforms/android-19/android.jar!/android/app/Activity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="39" selection-start="3509" selection-end="3509" vertical-scroll-proportion="1.9270834" vertical-offset="420" max-vertical-offset="7565">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Android/extras/android/support/v4/android-support-v4.jar!/android/support/v4/app/DialogFragment.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="16" selection-start="1375" selection-end="1375" vertical-scroll-proportion="0.34845734" vertical-offset="318" max-vertical-offset="1377">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/BadgeDialogFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="56" selection-start="1296" selection-end="1296" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1802">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/BadgeUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="20" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/FullBodyWorkout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="142" column="49" selection-start="5989" selection-end="5989" vertical-scroll-proportion="0.20054945" vertical-offset="2035" max-vertical-offset="2992">
+          <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>

@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +23,6 @@ public class FullBodyWorkout extends FragmentActivity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.fullbody);
         //AssociatesAPI.initialize(new AssociatesAPI.Config(APPLICATION_KEY, this)); TODO: Get key
 
@@ -148,7 +146,7 @@ public class FullBodyWorkout extends FragmentActivity {
                     } else if (days.length == MAXDAYS - 1) { // Hit the goal
                         edit.remove("TimesOfCompletions");
                         edit.commit();
-                        showBadge("7consecutive");
+                        BadgeUtils.showBadge(this, getSupportFragmentManager(), "7consecutive", R.layout.consecutivebadge);
                     }
                 } else if (daysDiff != 0) {  // not a consecutive day
                     edit.remove("TimesOfCompletions");
@@ -185,18 +183,6 @@ public class FullBodyWorkout extends FragmentActivity {
             ret[i] = prefs.getInt("Day_" + i, i);
         }
         return ret;
-    }
-
-    private void showBadge(String badgeName) {
-        SharedPreferences badgePrefs = FullBodyWorkout.this.getSharedPreferences("Badges", Context.MODE_PRIVATE);
-        SharedPreferences.Editor badgeEdit = badgePrefs.edit();
-
-        badgeEdit.putBoolean("Done_" + badgeName, true);
-        badgeEdit.putBoolean("ShownBadge_" + badgeName, true);
-        badgeEdit.commit();
-
-        DialogFragment frag = new BadgeDialogFragment();
-        frag.show(getSupportFragmentManager(), "New Badge");
     }
 
 }

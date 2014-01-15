@@ -18,6 +18,12 @@ import com.facebook.widget.FacebookDialog;
 public class BadgeDialogFragment extends DialogFragment {
 
     private UiLifecycleHelper uiHelper;
+    private int layout;
+
+    public BadgeDialogFragment(int l) {
+        super();
+        layout = l;
+    }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -29,7 +35,7 @@ public class BadgeDialogFragment extends DialogFragment {
         builder.setTitle("New Badge Awarded!");
         builder.setCancelable(true);
         final LayoutInflater inflater = getActivity().getLayoutInflater();
-        builder.setView(inflater.inflate(R.layout.newbadge, null));
+        builder.setView(inflater.inflate(layout, null));
         builder
                 .setPositiveButton("Share to Facebook", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
