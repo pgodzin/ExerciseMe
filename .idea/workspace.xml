@@ -61,22 +61,7 @@
     </layouts>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="143b74c1-d5c2-4c89-8439-cba51ff4694f" name="Default" comment="badge fragment refactor to BadgeUtils">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-hdpi/fb.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-hdpi/feedback.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-hdpi/newsletter.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/NewsletterSignup.java" />
-      <change type="DELETED" beforePath="C:\Users\Phil\Dropbox\Public\CS\Android Dev\ExerciseMe\src\com\example\ExerciseMe\EnterEmail.java" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\Phil\Dropbox\Public\CS\Android Dev\ExerciseMe\res\drawable-hdpi\badge.jpg" afterPath="$PROJECT_DIR$/res/drawable-hdpi/consecutivebadge.jpg" />
-      <change type="MOVED" beforePath="C:\Users\Phil\Dropbox\Public\CS\Android Dev\ExerciseMe\res\layout\consecutivebadge.xml" afterPath="$PROJECT_DIR$/res/layout/newbadge.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/ExerciseMe/BadgeDialogFragment.java" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/BadgeDialogFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/ExerciseMe/BadgeUtils.java" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/BadgeUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/ExerciseMe/FeedbackForm.java" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/FeedbackForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/ExerciseMe/FullBodyWorkout.java" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/FullBodyWorkout.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/ExerciseMe/Homescreen.java" afterPath="$PROJECT_DIR$/src/com/example/ExerciseMe/Homescreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/homescreen.xml" afterPath="$PROJECT_DIR$/res/layout/homescreen.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
+    <list default="true" id="143b74c1-d5c2-4c89-8439-cba51ff4694f" name="Default" comment="badge refactor complete - feedback and newsletter badges implemented">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ExerciseMe.iws" />
@@ -964,7 +949,11 @@
       <created>1389785235471</created>
       <updated>1389785235471</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="badge refactor complete - feedback and newsletter badges implemented">
+      <created>1389840819340</created>
+      <updated>1389840819340</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -988,7 +977,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1077,7 +1066,8 @@
     <MESSAGE value="SES implemented and working!" />
     <MESSAGE value="SES files added" />
     <MESSAGE value="badge fragment refactor to BadgeUtils" />
-    <option name="LAST_COMMIT_MESSAGE" value="badge fragment refactor to BadgeUtils" />
+    <MESSAGE value="badge refactor complete - feedback and newsletter badges implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="badge refactor complete - feedback and newsletter badges implemented" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
