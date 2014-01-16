@@ -1,36 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
-
+              android:layout_height="match_parent"
+              android:background="#0d044d"
+              tools:context=".FullBodyWorkout">
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Full Body Workout"
+            android:text="@string/fullBody"
             android:id="@+id/fbTitle"
             android:textSize="30sp"
             android:paddingTop="5dp"
             android:paddingLeft="5dp"
             android:paddingBottom="10dp"/>
 
-    <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="50 pushups"
-            android:id="@+id/checkBox"
-            android:textSize="25sp"
-            android:paddingBottom="10dp"
-            android:paddingLeft="5dp"
-            android:onClick="onCheckboxClicked"
-            android:checked="false"/>
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pushups"
+                android:id="@+id/checkBox"
+                android:textSize="25sp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:onClick="onCheckboxClicked"
+                android:checked="false"
+                android:paddingRight="15dp"/>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/play_button"
+                android:layout_gravity="right"
+                android:background="@android:drawable/ic_media_play"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/checkBox"
+                android:clickable="true"
+                android:layout_alignBottom="@+id/checkBox"
+                />
+    </RelativeLayout>
 
     <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="100 situps"
+            android:text="@string/situps"
             android:id="@+id/checkBox2"
             android:textSize="25sp"
             android:paddingBottom="10dp"
@@ -41,7 +61,7 @@
     <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="100 crunches"
+            android:text="@string/crunches"
             android:id="@+id/checkBox3"
             android:textSize="25sp"
             android:paddingBottom="10dp"
@@ -52,7 +72,7 @@
     <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="50 squats"
+            android:text="@string/squats"
             android:id="@+id/checkBox4"
             android:textSize="25sp"
             android:paddingBottom="10dp"
@@ -64,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Congrats! You are done with the workout!"
+            android:text="@string/workoutDone"
             android:id="@+id/done"
             android:paddingTop="10dp"
             android:paddingBottom="20dp"
@@ -75,7 +95,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Suggested Products:"
+            android:text="@string/suggestedProducts"
             android:id="@+id/suggested"
             android:textSize="25dp"/>
 
@@ -109,7 +129,7 @@
                         android:layout_height="match_parent"
                         android:layout_below="@+id/shirtButton"
                         android:layout_centerHorizontal="true"
-                        android:text="Workout Shirt"
+                        android:text="@string/shirt"
                         android:textSize="20sp"/>
             </RelativeLayout>
             <RelativeLayout
@@ -130,7 +150,7 @@
                         android:layout_height="match_parent"
                         android:layout_below="@+id/shortsButton"
                         android:layout_centerHorizontal="true"
-                        android:text="Workout Shorts"
+                        android:text="@string/shorts"
                         android:textSize="20sp"/>
             </RelativeLayout>
             <RelativeLayout
@@ -149,10 +169,11 @@
                         android:layout_height="match_parent"
                         android:layout_below="@+id/suppButton"
                         android:layout_centerHorizontal="true"
-                        android:text="Supplements"
+                        android:text="@string/supps"
                         android:textSize="20sp"/>
             </RelativeLayout>
 
         </LinearLayout>
     </HorizontalScrollView>
+
 </LinearLayout>

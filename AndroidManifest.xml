@@ -5,13 +5,18 @@
           android:versionName="1.0">
 
     <uses-sdk android:minSdkVersion="19"/>
+
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
     <application
             android:label="@string/app_name"
             android:icon="@drawable/ic_launcher">
         <activity
                 android:name="MainActivity"
-                android:label="@string/app_name">
+                android:label="@string/app_name"
+                android:noHistory="true"
+                >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -21,10 +26,19 @@
                 android:name=".Homescreen"
                 android:label="Homescreen"/>
         <activity
-                android:name=".EnterEmail"
+                android:name=".NewsletterSignup"
                 android:label="EnterEmail"/>
         <activity
                 android:name=".FullBodyWorkout"
-                android:label="FullBodyWorkout"/>
+                android:label="FullBodyWorkout"
+                />
+        <activity
+                android:name=".FeedbackForm"
+                android:label="Feedback Form"
+                />
+        <activity
+                android:name=".MediaPlayer"
+                android:label="MediaPlayer"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
     </application>
 </manifest>

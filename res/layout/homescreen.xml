@@ -1,43 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@android:color/background_light">
+              android:background="#0d044d"
+              tools:context=".Homescreen">
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Select A Workout"
+            android:text="@string/selectWorkout"
             android:id="@+id/textView"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:paddingLeft="5dp"
             android:paddingTop="5dp"
             android:paddingBottom="10dp"/>
 
     <ListView
             android:layout_width="wrap_content"
-            android:layout_height="259dp"
+            android:layout_height="318dp"
             android:id="@android:id/list"
             android:smoothScrollbar="false"
-            android:background="@android:color/background_light"
-            android:stackFromBottom="false"/>
+            android:stackFromBottom="false"
+            android:background="@android:color/holo_blue_dark"/>
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/newsletter"
-            android:textColor="@android:color/black"
-            android:text="Click here to sign up for our free newsletter!"
+            android:textColor="@android:color/white"
+            android:text="@string/newsletter"
             android:textSize="20dp"
             android:gravity="bottom"
             android:paddingTop="60dp"
             android:singleLine="false"
             android:clickable="true"
             android:paddingLeft="5dp"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/askForFeedbackText"
+            android:id="@+id/feedback"
+            android:paddingTop="10dp"
+            android:clickable="true"/>
 
 
 </LinearLayout>
