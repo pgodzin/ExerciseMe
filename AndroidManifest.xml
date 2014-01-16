@@ -26,7 +26,7 @@
                 android:name=".Homescreen"
                 android:label="Homescreen"/>
         <activity
-                android:name=".EnterEmail"
+                android:name=".NewsletterSignup"
                 android:label="EnterEmail"/>
         <activity
                 android:name=".FullBodyWorkout"
@@ -34,7 +34,7 @@
                 />
         <activity
                 android:name=".FeedbackForm"
-                android:label="ExerciseMe"
+                android:label="Feedback Form"
                 />
         <activity
                 android:name=".MediaPlayer"

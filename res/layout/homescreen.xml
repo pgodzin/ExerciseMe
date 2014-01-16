@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/feedbackText"
+            android:text="@string/askForFeedbackText"
             android:id="@+id/feedback"
             android:paddingTop="10dp"
             android:clickable="true"/>

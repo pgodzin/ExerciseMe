@@ -1,17 +1,18 @@
 package com.example.ExerciseMe;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
 
-public class FeedbackForm extends Activity {
+public class FeedbackForm extends FragmentActivity {
 
     protected Button submitButton;
     protected RatingBar ratingBar;
@@ -33,7 +34,7 @@ public class FeedbackForm extends Activity {
         nameField = (EditText) findViewById(R.id.nameField);
         commentsField = (EditText) findViewById(R.id.commentsField);
 
-        clientManager = new AmazonClientManager( getSharedPreferences( "com.amazon.aws.demo.AWSDemo", Context.MODE_PRIVATE ));
+        clientManager = new AmazonClientManager(getSharedPreferences("com.amazon.aws.demo.AWSDemo", Context.MODE_PRIVATE));
         if (FeedbackForm.clientManager.hasCredentials()) {
             submitButton.setVisibility(View.VISIBLE);
             this.wireButtons();
@@ -117,6 +118,13 @@ public class FeedbackForm extends Activity {
                             public void onClick(DialogInterface dialog,
                                                 int which) {
                                 dialog.dismiss();
+                                SharedPreferences badgePrefs = FeedbackForm.this.getSharedPreferences("Badges", Context.MODE_PRIVATE);
+
+                                SharedPreferences.Editor edit = badgePrefs.edit();  //
+                                edit.remove("Shown_feedback");       //TODO: remove once live
+                                edit.commit(); //
+                                if (badgePrefs.getBoolean("Shown_feedback", false) == false)
+                                    BadgeUtils.showBadge(FeedbackForm.this, getSupportFragmentManager(), "feedback");
                             }
                         });
             } else {

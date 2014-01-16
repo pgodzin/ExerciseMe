@@ -2,12 +2,17 @@ package com.example.ExerciseMe;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.facebook.UiLifecycleHelper;
 import com.facebook.model.GraphObject;
@@ -18,11 +23,14 @@ import com.facebook.widget.FacebookDialog;
 public class BadgeDialogFragment extends DialogFragment {
 
     private UiLifecycleHelper uiHelper;
-    private int layout;
+    private int layout = R.layout.newbadge;
+    private String badgeName;
+    private Context context;
 
-    public BadgeDialogFragment(int l) {
+    public BadgeDialogFragment(Context c, String badge) {
         super();
-        layout = l;
+        badgeName = badge;
+        context = c;
     }
 
     @Override
@@ -30,12 +38,24 @@ public class BadgeDialogFragment extends DialogFragment {
         uiHelper = new UiLifecycleHelper(getActivity(), null);
         uiHelper.onCreate(savedInstanceState);
 
-        // Use the Builder class for convenient dialog construction
+        SharedPreferences badgePrefs = getActivity().getSharedPreferences("Badges", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = badgePrefs.edit();
+        edit.putBoolean("Shown_" + badgeName, true);
+        edit.commit();
+
         final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle("New Badge Awarded!");
         builder.setCancelable(true);
         final LayoutInflater inflater = getActivity().getLayoutInflater();
-        builder.setView(inflater.inflate(layout, null));
+
+        View view = inflater.inflate(layout, null);
+        ImageView badgeImage = (ImageView) view.findViewById(R.id.badge);
+        TextView badgeText = (TextView) view.findViewById(R.id.badgeText);
+
+        badgeText.setText(context.getResources().getIdentifier(badgeName + "Text", "string", context.getPackageName()));
+        badgeImage.setImageResource(context.getResources().getIdentifier(badgeName, "drawable", context.getPackageName()));
+
+        builder.setView(view);
         builder
                 .setPositiveButton("Share to Facebook", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {

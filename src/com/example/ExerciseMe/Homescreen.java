@@ -20,7 +20,7 @@ public class Homescreen extends ListActivity {
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Homescreen.this, EnterEmail.class);
+                Intent intent = new Intent(Homescreen.this, NewsletterSignup.class);
                 startActivity(intent);
             }
         });

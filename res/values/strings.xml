@@ -7,8 +7,7 @@
     <string name="rating">Rating</string>
     <string name="comments">Comments</string>
     <string name="submit">Submit</string>
-    <string name="app_name">FeedbackForm</string>
-    <string name="feedbackText">Click here to give us feedback!</string>
+    <string name="askForFeedbackText">Click here to give us feedback!</string>
     <string name="selectWorkout">Select A Workout</string>
     <string name="newsletter">Click here to sign up for our free newsletter!</string>
     <string name="enterEmail">Enter your email to sign up for our newsletter</string>
@@ -26,5 +25,9 @@
     <string name="shorts">Workout Shorts</string>
     <string name="supps">Supplements</string>
     <string name="badgeContent">New badge awarded</string>
-    <string name="consbadge">Badge added: 7 Days in a Row!</string>
+    <string name="consecutivebadgeText">Badge added: 7 Days in a Row!</string>
+    <string name="feedbackText">Badge added: Feedback sent!</string>
+    <string name="fbText">Badge added: Shared Badge to Facebook!</string>
+    <string name="newsletterText">Badge added: Signed up for our newsletter!</string>
+
 </resources>

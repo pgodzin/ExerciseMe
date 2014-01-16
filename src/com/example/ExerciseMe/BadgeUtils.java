@@ -7,14 +7,14 @@ import android.support.v4.app.FragmentManager;
 
 public class BadgeUtils {
 
-    public static void showBadge(Context context, FragmentManager fm, String badgeName, int layout) {
+    public static void showBadge(Context context, FragmentManager fm, String badgeName) {
         SharedPreferences badgePrefs = context.getSharedPreferences("Badges", Context.MODE_PRIVATE);
         SharedPreferences.Editor badgeEdit = badgePrefs.edit();
 
         badgeEdit.putBoolean("ShownBadge_" + badgeName, true);
         badgeEdit.commit();
 
-        DialogFragment frag = new BadgeDialogFragment(layout);
+        DialogFragment frag = new BadgeDialogFragment(context, badgeName);
         frag.show(fm, "New Badge:" + badgeName);
     }
 }

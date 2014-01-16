@@ -132,8 +132,7 @@ public class FullBodyWorkout extends FragmentActivity {
         SharedPreferences.Editor edit = prefs.edit();
 
         SharedPreferences badgePrefs = FullBodyWorkout.this.getSharedPreferences("Badges", Context.MODE_PRIVATE);
-        SharedPreferences.Editor badgeEdit = badgePrefs.edit();
-        if (!badgePrefs.getBoolean("ShownBadge_7consecutive", false)) {
+        if (!badgePrefs.getBoolean("ShownBadge_consecutivebadge", false)) {
             if (days.length > 0 && currentDay != days[days.length - 1]) {  // Not first completion and not same day
                 int daysDiff = currentDay - days[days.length - 1];
                 if (daysDiff == 1) { // completes on following day       TODO: end of year?
@@ -146,7 +145,7 @@ public class FullBodyWorkout extends FragmentActivity {
                     } else if (days.length == MAXDAYS - 1) { // Hit the goal
                         edit.remove("TimesOfCompletions");
                         edit.commit();
-                        BadgeUtils.showBadge(this, getSupportFragmentManager(), "7consecutive", R.layout.consecutivebadge);
+                        BadgeUtils.showBadge(this, getSupportFragmentManager(), "consecutivebadge");
                     }
                 } else if (daysDiff != 0) {  // not a consecutive day
                     edit.remove("TimesOfCompletions");
