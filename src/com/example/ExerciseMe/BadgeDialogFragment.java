@@ -60,7 +60,7 @@ public class BadgeDialogFragment extends DialogFragment {
                 .setPositiveButton("Share to Facebook", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         BadgeDialogFragment.this.getDialog().cancel();
-                        // shareToFB();    //TODO: Fix
+                        shareToFB(context, badgeName);    //TODO: Fix
 
                     }
                 })
@@ -116,18 +116,23 @@ public class BadgeDialogFragment extends DialogFragment {
     }
 
 
-    private void shareToFB() {
-        if (FacebookDialog.canPresentOpenGraphActionDialog(getActivity().getApplicationContext(),
+    private void shareToFB(Context context, String badgeName) {
+        String description = context.getResources().getText(context.getResources()
+                .getIdentifier(badgeName + "FB", "string", context.getPackageName())).toString();
+
+        String imgURL = context.getResources().getText(context.getResources()
+                .getIdentifier(badgeName + "imgURL", "string", context.getPackageName())).toString();
+
+        if (FacebookDialog.canPresentOpenGraphActionDialog(context.getApplicationContext(),
                 FacebookDialog.OpenGraphActionDialogFeature.OG_ACTION_DIALOG)) {
-            OpenGraphObject badge = OpenGraphObject.Factory.createForPost("exercisemeapp:badge");
-            badge.setProperty("title", "I achieved a new badge!");
-            badge.setProperty("image", "http://4sqday16.files.wordpress.com/2011/11/foursquare-gym-rat-badge.png");
-            //badge.setProperty("url", "https://example.com/cooking-app/badge/Buffalo-Tacos.html");  TODO: link to appstore
-            badge.setProperty("description", "I completed a full body workout for 7 straight days!");
+            OpenGraphObject badge = OpenGraphObject.Factory.createForPost
+                    (OpenGraphObject.class, "exercisemeapp:badge", "I earned a new badge!",
+                            imgURL, null, description);
             OpenGraphAction action = GraphObject.Factory.create(OpenGraphAction.class);
             action.setProperty("badge", badge);
+            action.setType("exercisemeapp:earn");
 
-            FacebookDialog shareDialog = new FacebookDialog.OpenGraphActionDialogBuilder(getActivity(), action, "exercisemeapp:earn", "badge")
+            FacebookDialog shareDialog = new FacebookDialog.OpenGraphActionDialogBuilder(getActivity(), action, "badge")
                     .build();
             uiHelper.trackPendingDialogCall(shareDialog.present());
         } else {

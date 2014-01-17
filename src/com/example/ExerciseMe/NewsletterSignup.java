@@ -17,7 +17,6 @@ public class NewsletterSignup extends FragmentActivity {
             @Override
             public void onClick(View view) {
                 SharedPreferences badgePrefs = NewsletterSignup.this.getSharedPreferences("Badges", Context.MODE_PRIVATE);
-
                 SharedPreferences.Editor edit = badgePrefs.edit();  //
                 edit.remove("Shown_newsletter");       //TODO: remove once live
                 edit.commit(); //
