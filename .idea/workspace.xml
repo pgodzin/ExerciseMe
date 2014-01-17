@@ -61,7 +61,7 @@
     </layouts>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="143b74c1-d5c2-4c89-8439-cba51ff4694f" name="Default" comment="facebook opengraph refactor - set up key">
+    <list default="true" id="143b74c1-d5c2-4c89-8439-cba51ff4694f" name="Default" comment="facebook sharing completed">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ExerciseMe.iws" />
@@ -933,7 +933,11 @@
       <created>1389956360636</created>
       <updated>1389956360636</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="facebook sharing completed">
+      <created>1389959170760</created>
+      <updated>1389959170760</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1048,7 +1052,8 @@
     <MESSAGE value="badge fragment refactor to BadgeUtils" />
     <MESSAGE value="badge refactor complete - feedback and newsletter badges implemented" />
     <MESSAGE value="facebook opengraph refactor - set up key" />
-    <option name="LAST_COMMIT_MESSAGE" value="facebook opengraph refactor - set up key" />
+    <MESSAGE value="facebook sharing completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="facebook sharing completed" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
