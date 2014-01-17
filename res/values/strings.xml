@@ -26,8 +26,18 @@
     <string name="supps">Supplements</string>
     <string name="badgeContent">New badge awarded</string>
     <string name="consecutivebadgeText">Badge added: 7 Days in a Row!</string>
+    <string name="consecutivebadgeFB">I completed a full body ExerciseMe workout for 7 straight days!</string>
+    <string name="consecutivebadgeimgURL">http://4sqday16.files.wordpress.com/2011/11/foursquare-gym-rat-badge.png</string>
     <string name="feedbackText">Badge added: Feedback sent!</string>
+    <string name="feedbackFB">I shared my feedback on the ExerciseMe app!</string>
+    <string name="feedbackimgURL">http://www.bookreferees.com/uploads/1/0/1/4/10141606/7559896_orig.jpg</string>
     <string name="fbText">Badge added: Shared Badge to Facebook!</string>
+    <string name="fbFB">I shared my ExerciseMe badge achievement on Facebook!</string>
+    <string name="fbimgURL">http://likesreviewer.com/wp-content/uploads/2013/06/is320.jpg</string>
     <string name="newsletterText">Badge added: Signed up for our newsletter!</string>
+    <string name="newsletterFB">I signed up for the ExerciseMe newsletter!</string>
+    <string name="newsletterimgURL">https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTxqEGOC67dSrMmFqzwUmhQNaPERNodyi72sbHlGykACg_L7mnW</string>
+
+
 
 </resources>
