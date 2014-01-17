@@ -61,9 +61,7 @@
     </layouts>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="143b74c1-d5c2-4c89-8439-cba51ff4694f" name="Default" comment="facebook sharing completed">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="143b74c1-d5c2-4c89-8439-cba51ff4694f" name="Default" comment="facebook sharing completed" />
     <ignored path="ExerciseMe.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -190,7 +188,7 @@
       <file leaf-file-name="BadgeDialogFragment.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/BadgeDialogFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="129" column="36" selection-start="4824" selection-end="4824" vertical-scroll-proportion="1.027933" vertical-offset="1451" max-vertical-offset="2142">
+            <state line="129" column="36" selection-start="4824" selection-end="4824" vertical-scroll-proportion="0.64788735" vertical-offset="1451" max-vertical-offset="2142">
               <folding />
             </state>
           </provider>
@@ -937,7 +935,11 @@
       <created>1389959170760</created>
       <updated>1389959170760</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="facebook sharing completed">
+      <created>1389959207856</created>
+      <updated>1389959207856</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -962,7 +964,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -977,7 +979,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5027027" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32357723" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34146342" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34146342" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1358,7 +1360,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/ExerciseMe/BadgeDialogFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="36" selection-start="4824" selection-end="4824" vertical-scroll-proportion="1.027933" vertical-offset="1451" max-vertical-offset="2142">
+        <state line="129" column="36" selection-start="4824" selection-end="4824" vertical-scroll-proportion="0.64788735" vertical-offset="1451" max-vertical-offset="2142">
           <folding />
         </state>
       </provider>
